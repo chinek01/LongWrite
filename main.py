@@ -22,8 +22,11 @@ FONT_24 = ("NewYork", 24)
 FONT_20 = ("NewYork", 20)
 FONT_16 = ("NewYork", 16)
 
+# ---------------------------- some func ------------------------------------ #
 
 
+def clear_text():
+    text_input.delete('0', END)
 
 # ---------------------------- UI ------------------------------------ #
 
@@ -100,7 +103,16 @@ text_input.grid(
     columnspan=2
 )
 
-
+# some buttons
+clear_btn = Button(
+    text="Clear text",
+    highlightthickness=0,
+    command=clear_text
+)
+clear_btn.grid(
+    row=3,
+    column=0
+)
 
 
 # ---------------------------- start window ------------------------------------ #
