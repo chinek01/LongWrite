@@ -26,7 +26,7 @@ FONT_16 = ("NewYork", 16)
 
 
 def clear_text():
-    text_input.delete('0', END)
+    text_input.delete("1.0", END)
 
 
 def save_work():
@@ -94,15 +94,16 @@ short_time_clock.grid(
     column=1
 )
 
+# text
 v = Scrollbar(
     window,
     orient='vertical'
 )
 
-# text
 text_input = Text(
     window,
-    yscrollcommand=v.set
+    yscrollcommand=v.set,
+    font=FONT_20
 )
 text_input.grid(
     row=2,
