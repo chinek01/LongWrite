@@ -12,6 +12,7 @@ Author: MC
 from tkinter import *
 from time import strftime, gmtime
 from tkinter.messagebox import showinfo
+from tkinter import filedialog
 
 
 # ---------------------------- constance ------------------------------------ #
@@ -26,12 +27,44 @@ FONT_16 = ("NewYork", 16)
 
 
 def clear_text():
+    """
+    clear text input field
+    """
     text_input.delete("1.0", END)
 
 
 def save_work():
-    # todo: some functionality
-    pass
+    """
+    save work :)
+    """
+
+    if len(text_input.get('1.0', END)) > 0:
+
+        filetype = (
+            ('txt file', '*.txt'),
+        )
+
+        try:
+            file = filedialog.asksaveasfile(filetypes=filetype)
+
+            if file is None:
+                raise ValueError("The file name must be set")
+
+            showinfo(
+                title="Info",
+                message="Your work was saved correctly ;)"
+            )
+
+            with open(file.name, 'w') as f:
+                f.writelines(text_input.get('1.0', END))
+
+        except Exception as e:
+            showinfo(
+                title="Error",
+                message=e.__str__()
+            )
+
+        # print(text_input.get('1.0', END))
 
 
 # ---------------------------- UI ------------------------------------ #
