@@ -28,6 +28,12 @@ FONT_16 = ("NewYork", 16)
 def clear_text():
     text_input.delete('0', END)
 
+
+def save_work():
+    # todo: some functionality
+    pass
+
+
 # ---------------------------- UI ------------------------------------ #
 
 # window ini
@@ -104,6 +110,8 @@ text_input.grid(
 )
 
 # some buttons
+
+# clear button
 clear_btn = Button(
     text="Clear text",
     highlightthickness=0,
@@ -112,6 +120,17 @@ clear_btn = Button(
 clear_btn.grid(
     row=3,
     column=0
+)
+
+# save button
+save_btn = Button(
+    text="Save work",
+    highlightthickness=0,
+    command=save_work
+)
+save_btn.grid(
+    row=3,
+    column=1
 )
 
 
