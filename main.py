@@ -85,6 +85,23 @@ short_time_clock.grid(
     column=1
 )
 
+v = Scrollbar(
+    window,
+    orient='vertical'
+)
+
+# text
+text_input = Text(
+    window,
+    yscrollcommand=v.set
+)
+text_input.grid(
+    row=2,
+    columnspan=2
+)
+
+
+
 
 # ---------------------------- start window ------------------------------------ #
 
