@@ -19,6 +19,7 @@ FONT_48 = ("NewYork", 48)
 FONT_36 = ("NewYork", 36)
 FONT_32 = ("NewYork", 32)
 FONT_24 = ("NewYork", 24)
+FONT_20 = ("NewYork", 20)
 FONT_16 = ("NewYork", 16)
 
 
@@ -30,8 +31,8 @@ FONT_16 = ("NewYork", 16)
 window = Tk()
 window.title("Long Write Project by MC")
 window.config(
-    padx=100,
-    pady=50,
+    padx=50,
+    pady=25,
     bg="#323232"
 )
 window.minsize(
@@ -39,3 +40,54 @@ window.minsize(
     height=600
 )
 
+# some controls
+long_time_text_label = Label(
+    text="Long time",
+    font=FONT_20,
+    fg="white",
+    pady=15,
+)
+long_time_text_label.grid(
+    row=0,
+    column=0
+)
+
+long_time_clock = Label(
+    text="00:00",
+    font=FONT_24,
+    fg='white',
+    pady=15
+)
+long_time_clock.grid(
+    row=1,
+    column=0
+)
+
+short_time_text_label = Label(
+    text="Short time",
+    font=FONT_20,
+    fg='white',
+    pady=15
+)
+short_time_text_label.grid(
+    row=0,
+    column=1
+)
+
+short_time_clock = Label(
+    text="00:00",
+    font=FONT_24,
+    fg='red',
+    pady=15
+)
+short_time_clock.grid(
+    row=1,
+    column=1
+)
+
+
+# ---------------------------- start window ------------------------------------ #
+
+# on key event
+
+window.mainloop()
