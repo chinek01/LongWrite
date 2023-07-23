@@ -30,10 +30,6 @@ is_short_timer_start = False
 
 my_timer = None
 
-# todo: old timers - remove if not use -> check
-long_timer = None
-short_timer = None
-
 long_time_set = 60
 short_time_set = 5
 
@@ -44,7 +40,7 @@ short_timer_curr_state = short_time_set
 
 
 def text_input_key_enter(event):
-    # todo: key enter event
+    # key enter event
 
     global is_start_typing
     global is_long_timer_start
@@ -52,14 +48,6 @@ def text_input_key_enter(event):
 
     if is_start_typing is True and is_long_timer_start is True:
         reset_short_timer()
-
-    if is_start_typing is True:
-        # todo: refresh timers -> to test
-        # refresh_timers(
-        #     long_timer_curr_state,
-        #     short_timer_curr_state
-        # )
-        pass
 
     if is_start_typing is False:
         is_start_typing = True
@@ -79,7 +67,7 @@ def refresh_timers(
         long_timer_state,
         short_timer_state
 ):
-    # todo: refresh timers func
+    # refresh timers func
 
     global long_timer_curr_state
     global short_timer_curr_state
@@ -130,24 +118,6 @@ def refresh_timers(
 
 def start_timers():
 
-    # time_format = '%M:%S'
-    #
-    # global long_timer
-    # global short_timer
-    #
-    # global is_long_timer_start
-    # global is_short_timer_start
-
-    # if is_long_timer_start is False:
-    #     is_long_timer_start = True
-    #     is_short_timer_start = True
-    #
-    #     # todo: refresh timers -> to test
-    #     refresh_timers(
-    #         long_timer_curr_state,
-    #         short_timer_curr_state
-    #     )
-
     refresh_timers(
         long_timer_curr_state,
         short_timer_curr_state
@@ -155,58 +125,12 @@ def start_timers():
 
 
 def reset_short_timer():
-    # todo: reset short timer current state -> to test
+    # reset short timer current state -> to test
     global is_short_timer_start
     global short_timer_curr_state
 
     if is_short_timer_start is True:
         short_timer_curr_state = short_time_set
-
-
-# old versions - as hint -> delete after end new solution
-def old_start_short_timer(count):
-    global short_timer
-
-    time_format = '%M:%S'
-
-    short_time_clock.config(
-        text=strftime(
-            time_format,
-            gmtime(count)
-        )
-    )
-
-    if count > 0:
-        short_timer = window.after(
-            1000,
-            old_start_short_timer,
-            count - 1
-        )
-
-
-def old_start_long_timer(count):
-    """
-    start long time stoper
-    """
-
-    global long_timer
-
-    time_format = '%M:%S'
-
-    long_time_clock.config(
-        text=strftime(
-            time_format,
-            gmtime(count)
-        )
-    )
-
-    if count > 0:
-        long_timer = window.after(
-            1000,
-            old_start_long_timer,
-            count - 1
-        )
-# end old functions
 
 
 def save_btn_activator():
