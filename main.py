@@ -6,6 +6,8 @@ Day: 89
 Date: 2023-07-21
 Author: MC
 
+as in the example: https://www.squibler.io/dangerous-writing-prompt-app/write?limit=5&type=minutes
+
 """
 
 
